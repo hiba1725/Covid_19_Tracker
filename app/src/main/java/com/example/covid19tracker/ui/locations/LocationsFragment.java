@@ -1,4 +1,4 @@
-package com.example.covid19tracker.ui.home;
+package com.example.covid19tracker.ui.locations;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.covid19tracker.R;
 
-public class HomeFragment extends Fragment {
+public class LocationsFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private LocationsViewModel galleryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        galleryViewModel =
+                ViewModelProviders.of(this).get(LocationsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_locations, container, false);
+        final TextView textView = root.findViewById(R.id.text_locations);
+        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
