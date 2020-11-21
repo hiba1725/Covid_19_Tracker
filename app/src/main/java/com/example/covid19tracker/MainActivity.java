@@ -2,7 +2,6 @@ package com.example.covid19tracker;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Menu;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_heat_map, R.id.nav_locations, R.id.nav_user_profile)
+                R.id.nav_locations_list, R.id.nav_locations, R.id.nav_user_profile)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

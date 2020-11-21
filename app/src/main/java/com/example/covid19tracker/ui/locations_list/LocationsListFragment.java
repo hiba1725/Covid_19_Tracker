@@ -22,20 +22,20 @@ public class LocationsListFragment extends Fragment {
 
     private LocationsListViewModel homeViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(LocationsListViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_locations_list, container, false);
-        final TextView textView = root.findViewById(R.id.text_locations_list);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
-    }
+//    public View onCreateView(@NonNull LayoutInflater inflater,
+//                             ViewGroup container, Bundle savedInstanceState) {
+//        homeViewModel =
+//                ViewModelProviders.of(this).get(LocationsListViewModel.class);
+//        View root = inflater.inflate(R.layout.fragment_locations_list, container, false);
+//        final TextView textView = root.findViewById(R.id.text_locations_list);
+//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
+//        return root;
+//    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
