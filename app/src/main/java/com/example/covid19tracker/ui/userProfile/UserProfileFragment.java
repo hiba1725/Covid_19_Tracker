@@ -2,6 +2,7 @@ package com.example.covid19tracker.ui.userProfile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -23,13 +24,12 @@ public class UserProfileFragment extends Fragment {
         slideshowViewModel =
                 ViewModelProviders.of(this).get(UserProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_user_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_user_profile);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        menu.setGroupVisible(R.menu.locations_list_menu, false);
+        super.onPrepareOptionsMenu(menu);
     }
 }

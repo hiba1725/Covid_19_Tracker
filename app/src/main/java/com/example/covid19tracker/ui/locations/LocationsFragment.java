@@ -32,4 +32,10 @@ public class LocationsFragment extends Fragment {
         });
         return root;
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
 }

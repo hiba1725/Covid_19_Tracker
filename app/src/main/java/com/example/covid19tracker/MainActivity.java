@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Covid Resources (links about precautions...)", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Covid Resources:\nhttps://www.moph.gov.lb/en/Pages/2/24870/novel-coronavirus-2019-", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.locations_list_menu, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -60,4 +60,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }

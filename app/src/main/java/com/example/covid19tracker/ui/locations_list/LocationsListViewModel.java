@@ -1,16 +1,16 @@
-package com.example.covid19tracker.ui.heatMap;
+package com.example.covid19tracker.ui.locations_list;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HeatMapViewModel extends ViewModel {
+public class LocationsListViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HeatMapViewModel() {
+    public LocationsListViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Heat map goes here");
+        mText.setValue("AP Locations Table Goes Here");
     }
 
     public LiveData<String> getText() {
