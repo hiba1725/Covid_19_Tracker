@@ -6,4 +6,133 @@
     android:layout_height="match_parent"
     tools:context=".ui.locations_list.LocationsListFragment">
 
+    <TableLayout
+        android:id="@+id/locations_list_table"
+        android:layout_width="419dp"
+        android:layout_height="532dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locations_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number_patients_text" />
+        </TableRow>
+
+        <TableRow
+            android:background="#DAE8FC"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locations_beirut" />
+
+            <TextView
+                android:id="@+id/number_patients_beirut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number_patients_beirut" />
+        </TableRow>
+
+        <TableRow
+            android:background="#0079D1"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locations_tripoli" />
+
+            <TextView
+                android:id="@+id/number_patients_tripoli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number_patients_tripoli" />
+        </TableRow>
+
+        <TableRow
+            android:background="#DAE8FC"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locations_saida" />
+
+            <TextView
+                android:id="@+id/number_patients_saida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number_patients_saida" />
+        </TableRow>
+
+        <TableRow
+            android:background="#0079D1"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locations_barja" />
+
+            <TextView
+                android:id="@+id/number_patients_barja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number_patients_barja" />
+        </TableRow>
+
+        <TableRow
+            android:background="#DAE8FC"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locations_jbeil" />
+
+            <TextView
+                android:id="@+id/number_patients_jbeil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number_patients_jbeil" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/refresh_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Refresh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locations_list_table" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,11 @@
 package com.example.covid19tracker;
 
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -14,6 +18,12 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Covid Resources:\nhttps://www.moph.gov.lb/en/Pages/2/24870/novel-coronavirus-2019-", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Covid Resources:\n"+getString(R.string.covid_resources), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -44,6 +54,50 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+////////////////////server socket code/////////////////
+
+        View number_patients_beirut = (TextView) findViewById(R.id.number_patients_beirut);
+        View number_patients_tripoli = (TextView) findViewById(R.id.number_patients_tripoli);
+        View number_patients_saidat = (TextView) findViewById(R.id.number_patients_saida);
+        View number_patients_barja = (TextView) findViewById(R.id.number_patients_barja);
+
+        final View username = (EditText) findViewById(R.id.userName);
+        View phone_number = (EditText) findViewById(R.id.phoneNumber);
+
+        Button button = (Button) findViewById(R.id.refresh_button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Thread t = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Socket s = new Socket("127.0.0.1",8888);
+
+                            DataInputStream dIS = new DataInputStream(s.getInputStream());
+
+                            ((EditText) username).setText(dIS.readUTF());
+
+                            dIS.close();
+                            s.close();
+
+
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                        } catch (UnknownHostException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                });
+            }
+        });
+
     }
 //
 //    @Override

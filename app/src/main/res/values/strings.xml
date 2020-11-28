@@ -13,4 +13,18 @@
     <string name="menu_user_profile">User Profile</string>
 
     <string name="home_second">Home Second</string>
+
+    <string name="locations_text">Locations</string>
+    <string name="number_patients_text">Number of Patients</string>
+    <string name="locations_beirut">Beirut</string>
+    <string name="number_patients_beirut">6</string>
+    <string name="locations_tripoli">Tripoli</string>
+    <string name="number_patients_tripoli">5</string>
+    <string name="locations_saida">Saida</string>
+    <string name="number_patients_saida">4</string>
+    <string name="locations_barja">Barja</string>
+    <string name="number_patients_barja">7</string>
+    <string name="locations_jbeil">Jbeil</string>
+    <string name="number_patients_jbeil">3</string>
+    <string name="covid_resources"><a href="https://www.moph.gov.lb/en/Pages/2/24870/novel-coronavirus-2019-">https://www.moph.gov.lb/en/Pages/2/24870/novel-coronavirus-2019-</a></string>
 </resources>

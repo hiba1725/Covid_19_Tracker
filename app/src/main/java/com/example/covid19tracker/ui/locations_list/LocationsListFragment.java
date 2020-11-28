@@ -7,6 +7,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,24 +21,25 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.covid19tracker.R;
 
+import java.io.IOException;
+import java.net.Socket;
+
+import static androidx.lifecycle.ViewModelProviders.*;
+
 public class LocationsListFragment extends Fragment {
 
     private LocationsListViewModel homeViewModel;
 
-//    public View onCreateView(@NonNull LayoutInflater inflater,
-//                             ViewGroup container, Bundle savedInstanceState) {
-//        homeViewModel =
-//                ViewModelProviders.of(this).get(LocationsListViewModel.class);
-//        View root = inflater.inflate(R.layout.fragment_locations_list, container, false);
-//        final TextView textView = root.findViewById(R.id.text_locations_list);
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-//        return root;
-//    }
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        homeViewModel =
+                ViewModelProviders.of(this).get(LocationsListViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_locations_list, container, false);
+        final TableLayout locationsListTable = (TableLayout) root.findViewById(R.id.locations_list_table);
+        TableRow row = new TableRow(getActivity());
+        locationsListTable.addView(row, new TableLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        return root;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
